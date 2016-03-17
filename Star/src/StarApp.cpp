@@ -155,36 +155,36 @@ void StarApp::setup()
 	
 	// LOAD SHADERS
 	try {
-		mGradientShader = gl::GlslProg( loadResource( "passThru.vert" ), loadResource( "gradient.frag" ) );
-		mRoomShader		= gl::GlslProg( loadResource( "room.vert" ), loadResource( "room.frag" ) );
-		mStarShader		= gl::GlslProg( loadResource( "star.vert" ), loadResource( "star.frag" ) );
-		mGlowShader		= gl::GlslProg( loadResource( "passThru.vert" ), loadResource( "glow.frag" ) );
-		mNebulaShader	= gl::GlslProg( loadResource( "passThru.vert" ), loadResource( "nebula.frag" ) );
-		mCoronaShader	= gl::GlslProg( loadResource( "passThru.vert" ), loadResource( "corona.frag" ) );
-		mDustShader		= gl::GlslProg( loadResource( "passThruColor.vert" ), loadResource( "dust.frag" ) );
-		mPlanetShader	= gl::GlslProg( loadResource( "passThruNormals.vert" ), loadResource( "planet.frag" ) );
+        mGradientShader = gl::GlslProg( loadAsset( "passThru.vert" ), loadAsset( "gradient.frag" ) );
+		mRoomShader		= gl::GlslProg( loadAsset( "room.vert" ), loadAsset( "room.frag" ) );
+		mStarShader		= gl::GlslProg( loadAsset( "star.vert" ), loadAsset( "star.frag" ) );
+		mGlowShader		= gl::GlslProg( loadAsset( "passThru.vert" ), loadAsset( "glow.frag" ) );
+		mNebulaShader	= gl::GlslProg( loadAsset( "passThru.vert" ), loadAsset( "nebula.frag" ) );
+		mCoronaShader	= gl::GlslProg( loadAsset( "passThru.vert" ), loadAsset( "corona.frag" ) );
+		mDustShader		= gl::GlslProg( loadAsset( "passThruColor.vert" ), loadAsset( "dust.frag" ) );
+		mPlanetShader	= gl::GlslProg( loadAsset( "passThruNormals.vert" ), loadAsset( "planet.frag" ) );
 	} catch( gl::GlslProgCompileExc e ) {
 		std::cout << e.what() << std::endl;
 		quit();
 	}
 	
 	// LOAD TEXTURES
-	mSpectrumTex		= gl::Texture( loadImage( loadResource( "spectrum.png" ) ) );
-	mGlowTex			= gl::Texture( loadImage( loadResource( "glow.png" ) ) );
-	mNebulaTex			= gl::Texture( loadImage( loadResource( "nebula.png" ) ) );
-	mCoronaTex			= gl::Texture( loadImage( loadResource( "corona.png" ) ) );
-	mGridTex			= gl::Texture( loadImage( loadResource( "grid.png" ) ) );
-	mSmallGridTex		= gl::Texture( loadImage( loadResource( "smallGrid.png" ) ) );
-	mBigGlow0Tex		= gl::Texture( loadImage( loadResource( "bigGlow0.png" ) ) );
-	mBigGlow1Tex		= gl::Texture( loadImage( loadResource( "bigGlow1.png" ) ) );
-	mIconTex			= gl::Texture( loadImage( loadResource( "iconStar.png" ) ) );
+	mSpectrumTex		= gl::Texture( loadImage( loadAsset( "spectrum.png" ) ) );
+	mGlowTex			= gl::Texture( loadImage( loadAsset( "glow.png" ) ) );
+	mNebulaTex			= gl::Texture( loadImage( loadAsset( "nebula.png" ) ) );
+	mCoronaTex			= gl::Texture( loadImage( loadAsset( "corona.png" ) ) );
+	mGridTex			= gl::Texture( loadImage( loadAsset( "grid.png" ) ) );
+	mSmallGridTex		= gl::Texture( loadImage( loadAsset( "smallGrid.png" ) ) );
+	mBigGlow0Tex		= gl::Texture( loadImage( loadAsset( "bigGlow0.png" ) ) );
+	mBigGlow1Tex		= gl::Texture( loadImage( loadAsset( "bigGlow1.png" ) ) );
+	mIconTex			= gl::Texture( loadImage( loadAsset( "iconStar.png" ) ) );
 	mCubeMap			= CubeMap( GLsizei(512), GLsizei(512),
-								  Surface8u( loadImage( loadResource( RES_CUBE1_ID ) ) ),
-								  Surface8u( loadImage( loadResource( RES_CUBE2_ID ) ) ),
-								  Surface8u( loadImage( loadResource( RES_CUBE3_ID ) ) ),
-								  Surface8u( loadImage( loadResource( RES_CUBE4_ID ) ) ),
-								  Surface8u( loadImage( loadResource( RES_CUBE5_ID ) ) ),
-								  Surface8u( loadImage( loadResource( RES_CUBE6_ID ) ) )
+								  Surface8u( loadImage( loadAsset( "cubePosX.jpg" ) ) ),
+								  Surface8u( loadImage( loadAsset( "cubePosY.jpg" ) ) ),
+								  Surface8u( loadImage( loadAsset( "cubePosZ.jpg" ) ) ),
+								  Surface8u( loadImage( loadAsset( "cubeNegX.jpg" ) ) ),
+								  Surface8u( loadImage( loadAsset( "cubeNegY.jpg" ) ) ),
+								  Surface8u( loadImage( loadAsset( "cubeNegZ.jpg" ) ) )
 								  );
 	
 	// FONTS
